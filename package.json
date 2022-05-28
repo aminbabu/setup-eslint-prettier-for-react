@@ -1,0 +1,25 @@
+{
+  "name": "eslint-prettier-setup-in-vscode",
+  "version": "1.0.0",
+  "description": "setup-eslint-prettier-for-react",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aminbabu/setup-eslint-prettier-for-react.git"
+  },
+  "keywords": [
+    "eslint-setup",
+    "prettier-setup",
+    "eslint-prettier-setup",
+    "lint-format-react"
+  ],
+  "author": "Amin Babu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aminbabu/setup-eslint-prettier-for-react/issues"
+  },
+  "homepage": "https://github.com/aminbabu/setup-eslint-prettier-for-react#readme"
+}
