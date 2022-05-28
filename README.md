@@ -10,9 +10,9 @@
   - [Plugins](#plugins)
   - [Settings](#settings)
   - [Set Line Breaks](#set-line-breaks)
-- [Linting Setup](#)
-  - [Dependencies](#)
-  - [Configure Eslint and Prettier](#)
+- [Linting Setup](#linting-setup)
+  - [Dependencies](#dependencies)
+  - [Configure Eslint and Prettier](#configure-eslint-and-prettier)
 
 <!-- Editor Setup -->
 
