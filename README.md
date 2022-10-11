@@ -113,15 +113,16 @@ Copy and paste the followings into the `.eslintrc.json` file.
     "airbnb/hooks",
     "eslint:recommended",
     "prettier",
-    "plugin:jsx-a11y/recommended"
+    "plugin:jsx-a11y/recommended",
+    "plugin:react/jsx-runtime"
   ],
   "parser": "@babel/eslint-parser",
   "parserOptions": {
     "requireConfigFile": false,
     "babelOptions": {
       "babelrc": false,
-      "configFile": false
-      // "presets": ["@babel/preset-react"]
+      "configFile": false,
+      "presets": ["@babel/preset-react"]
     }
   },
   "env": {
