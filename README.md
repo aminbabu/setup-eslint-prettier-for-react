@@ -85,13 +85,13 @@ In order to lint and format React project automatically according to most popula
 Install the following dev dependencies one by one.
 
 ```sh
-npm i -D @babel/core @babel/eslint-parser prettier eslint-config-prettier eslint-plugin-prettier
+npm i -D @babel/core @babel/eslint-parser prettier eslint-config-prettier eslint-plugin-prettier @babel/preset-react
 ```
 
 Or, if you are using `yarn` as your default package manager, try this:
 
 ```sh
-yarn add -D @babel/core @babel/eslint-parser prettier eslint-config-prettier eslint-plugin-prettier
+yarn add -D @babel/core @babel/eslint-parser prettier eslint-config-prettier eslint-plugin-prettier @babel/preset-react
 ```
 
 To follow airbnb style guide run the command:
