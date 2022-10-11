@@ -38,23 +38,26 @@ Follow the steps to create `settings.json` file inside the project root:
 
 ```sh
 {
-  // editor
+  // Theme
   "workbench.colorTheme": "Learn with Sumit - Peace of the eye - Dracula version",
+
+  // config related to code formatting
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "[javascript, javasscriptreact]": {
+  "[javascript]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": null
+  },
+  "[javascriptreact]": {
     "editor.formatOnSave": false,
     "editor.defaultFormatter": null
   },
   "javascript.validate.enable": false, //disable all built-in syntax checking
   "editor.codeActionsOnSave": {
-    "source.fixAll": true,
+    "source.fixAll.eslint": true,
+    "source.fixAll.tslint": true,
     "source.organizeImports": true
   },
-  // prettier
-  "prettier.jsxSingleQuote": true,
-  "prettier.singleQuote": true,
-  // eslint
   "eslint.alwaysShowStatus": true,
   // emmet
   "emmet.triggerExpansionOnTab": true,
@@ -62,6 +65,7 @@ Follow the steps to create `settings.json` file inside the project root:
     "javascript": "javascriptreact"
   }
 }
+
 ```
 
 If you follow all the previous steps correctly, your vscode should look like this.
@@ -81,13 +85,13 @@ In order to lint and format React project automatically according to most popula
 Install the following dev dependencies one by one.
 
 ```sh
-npm i -D eslint prettier prettier-eslint eslint-config-prettier eslint-plugin-prettier
+npm i -D @babel/core @babel/eslint-parser prettier eslint-config-prettier eslint-plugin-prettier
 ```
 
 Or, if you are using `yarn` as your default package manager, try this:
 
 ```sh
-yarn add -D eslint prettier prettier-eslint eslint-config-prettier eslint-plugin-prettier
+yarn add -D @babel/core @babel/eslint-parser prettier eslint-config-prettier eslint-plugin-prettier
 ```
 
 To follow airbnb style guide run the command:
@@ -104,30 +108,36 @@ Copy and paste the followings into the `.eslintrc.json` file.
 
 ```sh
 {
-  "env": {
-    "browser": true,
-    "es2021": true,
-    "node": true,
-    "jest": true
-  },
   "extends": [
-    "plugin:react/recommended",
     "airbnb",
-    "plugin:react/jsx-runtime",
+    "airbnb/hooks",
+    "eslint:recommended",
     "prettier",
     "plugin:jsx-a11y/recommended"
   ],
+  "parser": "@babel/eslint-parser",
   "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": "latest",
-    "sourceType": "module"
+    "requireConfigFile": false,
+    "babelOptions": {
+      "babelrc": false,
+      "configFile": false
+      // "presets": ["@babel/preset-react"]
+    }
   },
-  "plugins": ["react", "prettier", "react-hooks"],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2022": true,
+    "jest": true
+  },
   "rules": {
-    "no-console": "off",
-    "react/jsx-one-expression-per-line": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "no-console": 0,
+    "react/state-in-constructor": 0,
+    "indent": 0,
+    "linebreak-style": 0,
+    "react/prop-types": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
     "react/jsx-filename-extension": [
       1,
       {
@@ -139,24 +149,15 @@ Copy and paste the followings into the `.eslintrc.json` file.
       {
         "trailingComma": "es5",
         "singleQuote": true,
-        "jsxSingleQuote": true,
-        "overrides": [
-          {
-            "files": ["**/*.css", "**/*.scss", "**/*.html"],
-            "options": {
-              "singleQuote": false
-            }
-          }
-        ],
-        "printWidth": 80,
-        "tabWidth": 2,
+        "printWidth": 100,
+        "tabWidth": 4,
         "semi": true,
         "endOfLine": "auto"
       }
     ]
-  }
+  },
+  "plugins": ["prettier", "react", "react-hooks"]
 }
-
 ```
 
 ## Contact
